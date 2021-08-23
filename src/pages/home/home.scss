@@ -1,0 +1,44 @@
+.carousel-inner .item {
+	display: none;
+	position: relative;
+	-webkit-transition: .6s ease-in-out left;
+	transition: .6s ease-in-out left;
+}
+
+@keyframes change-colors {
+  0% {
+		background-color: #ffcf3d;
+  }
+	10% {
+		background-color: #ffcf3d;
+	}
+	40% {
+		background-color: #5ac6fe;
+	}
+  50% {
+		background-color: #5ac6fe;
+	}
+	90% {
+		background-color: #928aff;
+	}
+  100% {
+    background-color: #928aff;
+  }
+}
+
+/* Carousel animation */
+.splash-image {
+  animation: fade-in-out 4s infinite;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+		opacity: 1;
+	}
+  100% {
+    opacity: 0;
+  }
+}

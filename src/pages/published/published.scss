@@ -1,0 +1,58 @@
+.published-image {
+  margin-bottom: 25px; 
+}
+
+/* Carousel */
+.carousel-inner a {
+	color: #377BC8;
+	font-weight: 600;
+}
+
+.carousel-inner a:hover {
+	color: #333;
+}
+
+.flex-container img {
+	border-bottom: 1px solid #eee;
+	border-right: 1px solid #eee;
+	max-width: 100%;
+	height: auto;
+}
+
+.carousel-inner {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+#index-carousel {
+	margin-top: 2em;
+}
+
+.carousel-caption {
+	color: #616060;
+	position: relative;
+	left: 0;
+	right: 0;
+	padding-top: 10px;
+	padding-bottom: 0;
+	text-align: left;
+	text-shadow: none;
+	font-weight: 500;
+}
+
+.carousel-caption em {font-weight: 600;}
+
+@media only screen and (max-width: 991px) {
+	.carousel-caption {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.carousel img {
+		border: 0;
+	}
+}
+
+.carousel-caption.before-after {
+	text-align:center;
+}
