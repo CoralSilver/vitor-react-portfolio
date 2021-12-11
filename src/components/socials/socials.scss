@@ -1,0 +1,17 @@
+.social-connect {
+  position: fixed;
+  bottom: 0;
+  left: 10px;
+  z-index: 3;
+
+  svg {
+    font-size: 1.8em;
+    margin: 15px 10px 10px;
+    transition: color 200ms ease-out 100ms;
+  }
+
+  a:hover,
+  a:focus {
+  color: #a3a3a3;
+  }
+}

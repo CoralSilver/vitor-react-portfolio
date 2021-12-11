@@ -1,5 +1,10 @@
 .published-image {
   margin-bottom: 25px; 
+
+	img {
+		max-width: 100%;
+		width: 100%;
+	}
 }
 
 /* Carousel */
@@ -22,10 +27,6 @@
 .carousel-inner {
 	max-width: 1300px;
 	margin: 0 auto;
-}
-
-#index-carousel {
-	margin-top: 2em;
 }
 
 .carousel-caption {
@@ -54,5 +55,5 @@
 }
 
 .carousel-caption.before-after {
-	text-align:center;
+	text-align: center;
 }

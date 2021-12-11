@@ -1,33 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  NavLink
+  NavLink,
 } from "react-router-dom";
+import "./menu.scss";
 
 export const Menu = () => {
+  const [showMenu, toggleMenu] = useState(false);
+
+  const handleToggleMenu = () => {
+    toggleMenu(!showMenu);
+  }
+
   return (
-    <section class="left-sidebar">
-      <h1 class="logo text-left">
-        <Link to="/">Vitor Paulo Teixeira <span>photography</span>
-        </Link>
+    <>
+    <section className="left-sidebar">
+      <Link to="/">
+        <img
+          src="imgs/vitor-logo.png"
+          className="logo-image"
+          alt="Vitor Paulo Teixeira logo - go to home page"
+        />
+      </Link>
+      <a role="button" onClick={handleToggleMenu}>
+        <h1 className="logo-text">
+          Vitor P Teixeira <span>photography</span>
         </h1>
-        <nav class="side-nav panel-group" id="accordion">
-          <ul>
-            <li><NavLink to="/product-photography">Product</NavLink></li>
-            <li><NavLink to="/lifestyle">Lifestyle</NavLink></li>
-            <li><NavLink to="/published-photos">Published</NavLink></li>
-            <li><NavLink to="/retouching">Retouching</NavLink></li>
-            <li><NavLink to="/bio">Biography</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
-          </ul>
-        </nav>
-      <div class="social-connect top-placement">
-        <a href="https://www.linkedin.com/pub/vitor-paulo-teixeira/26/5/983" target="_blank"><i class="fa fa-2x fa-linkedin"></i></a>
-        <a href="http://instagram.com/vitorpt" target="_blank"><i class="fa fa-2x fa-instagram"></i></a>
-      </div>
+      </a>
+      <nav className={showMenu && "hide-menu"}>
+        <ul className="accordion-menu">
+          <li>
+            <NavLink to="/product-photography">Product</NavLink>
+          </li>
+          <li>
+            <NavLink to="/lifestyle">Lifestyle</NavLink>
+          </li>
+          <li>
+            <NavLink to="/published-photos">Published</NavLink>
+          </li>
+          <li>
+            <NavLink to="/retouching">Retouching</NavLink>
+          </li>
+          <li>
+            <NavLink to="/bio">Biography</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
+        </ul>
+      </nav>
     </section>
-  )
+    </>
+  );
 };

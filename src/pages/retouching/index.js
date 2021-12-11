@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Copyright } from "../../components/copyright";
+import "./retouching.scss";
 
 export const Retouching = () => {
   const images = [
@@ -17,31 +18,37 @@ export const Retouching = () => {
 
   const [imageState, swapImage] = useState(new Array(images.length).fill(true));
 
-	const updateImage = (index) => {
-		const images = [...imageState];
-		images[index] = !images[index];
-		swapImage(images);
-	}
+  const updateImage = (index) => {
+    debugger;
+    const images = [...imageState];
+    images[index] = !images[index];
+    swapImage(images);
+  };
 
   return (
-    <section class="right-section">
-      <div class="flex-container">
+    <section className="right-section not-home-page">
+      <h2 className="instructions">
+        Hover or click an image to see before and after
+      </h2>
+      <div className="flex-container">
         {images.map((img, index) => {
           return (
-            <div class="item">
+            <div className="item">
               <img
-                src={`imgs/retouched/${img.file}_${imageState[index] ? "after" : "before"}.jpg`}
+                src={`imgs/retouched/${img.file}_${
+                  imageState[index] ? "after" : "before"
+                }.jpg`}
                 alt={img.alt}
-                class="img-swap"
-								onMouseOut={() => updateImage(index)}
-								onMouseOver={() => updateImage(index)}
-								onClick={() => updateImage(index)}
+                className="img-swap"
+                onMouseOut={() => updateImage(index)}
+                onMouseOver={() => updateImage(index)}
+                onClick={() => updateImage(index)}
               />
             </div>
           );
         })}
       </div>
-			<Copyright />
+      <Copyright />
     </section>
   );
 };

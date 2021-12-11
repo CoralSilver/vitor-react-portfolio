@@ -1,8 +1,19 @@
 .carousel-inner .item {
 	display: none;
 	position: relative;
-	-webkit-transition: .6s ease-in-out left;
 	transition: .6s ease-in-out left;
+}
+
+.home-section {
+	justify-content: flex-start;
+	padding-top: 30px;
+}
+
+@media(min-width: 768px) {
+	.home-section {
+		justify-content: center;
+		padding-top: 0;
+	}
 }
 
 @keyframes change-colors {
@@ -29,6 +40,7 @@
 /* Carousel animation */
 .splash-image {
   animation: fade-in-out 4s infinite;
+	max-height: 100vh;
 }
 
 @keyframes fade-in-out {
