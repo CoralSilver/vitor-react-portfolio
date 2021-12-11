@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Copyright } from "../../components/copyright";
+import { RetouchedImage } from "../../components/retouchedImage";
 import "./retouching.scss";
 
 export const Retouching = () => {
@@ -19,7 +20,6 @@ export const Retouching = () => {
   const [imageState, swapImage] = useState(new Array(images.length).fill(true));
 
   const updateImage = (index) => {
-    debugger;
     const images = [...imageState];
     images[index] = !images[index];
     swapImage(images);
@@ -33,16 +33,18 @@ export const Retouching = () => {
       <div className="flex-container">
         {images.map((img, index) => {
           return (
-            <div className="item">
-              <img
-                src={`imgs/retouched/${img.file}_${
-                  imageState[index] ? "after" : "before"
-                }.jpg`}
+            <div
+              className="item"
+              key={img.file}
+              onMouseOut={() => updateImage(index)}
+              onMouseOver={() => updateImage(index)}
+              onClick={() => updateImage(index)}
+            >
+              <RetouchedImage
+                file={img.file}
                 alt={img.alt}
-                className="img-swap"
-                onMouseOut={() => updateImage(index)}
-                onMouseOver={() => updateImage(index)}
-                onClick={() => updateImage(index)}
+                index={index}
+                showRetouched={imageState[index]}
               />
             </div>
           );
