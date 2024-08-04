@@ -15,9 +15,6 @@ export const LifeStyle = () => {
 						<img src="imgs/lifestyle/Raphaela-Tavarone-3.jpg" alt="Raphaela Tavarone Jewelry"/>
 					</div>
 					<div className="item">
-						<img src="imgs/lifestyle/hand.jpg" alt="hand holding cell phone"/>
-					</div>
-					<div className="item">
 						<img src="imgs/lifestyle/antique-ring.jpg" alt="antique ring with flower background"/>
 					</div>
 					<div className="item">
